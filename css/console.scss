@@ -1,0 +1,62 @@
+@import 'colors';
+
+.__console__ {
+  height: 70%;
+  width: 100%;
+  background-color: $main_dark_1;
+  border-radius: 15px;
+
+  .console_top_bar {
+    height: 25px;
+    width: 100%;
+    background-color: $grey_mid_1;
+    display: flex;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    .navigation_buttons_container {
+      margin: 5px 5px 5px 10px;
+      display: flex;
+      gap: 5px;
+
+      .navigation_button {
+        height: 15px;
+        width: 15px;
+        border-radius: 100%;
+
+        &_1 {
+          background-color: $red_accent_1;
+        }
+
+        &_2 {
+          background-color: $yellow_accent_1;
+        }
+
+        &_3 {
+          background-color: $green_accent_1;
+        }
+      }
+    }
+
+    .server_windows_container {
+      height: 100%;
+      width: 100%;
+      margin-right: 15px;
+      display: flex;
+      gap: 5px;
+      // background-color: red;
+
+      .server_window {
+        height: 100%;
+        width: 150px;
+        background-color: $grey_mid_2;
+        border-radius: 10px;
+
+        &_selected {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+    }
+  }
+}

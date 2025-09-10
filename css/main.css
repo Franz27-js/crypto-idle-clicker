@@ -30,6 +30,9 @@ html body .main_container .content_container_column {
 }
 html body .main_container .content_container_column_left {
   width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 html body .main_container .content_container_column_right {
   width: 20%;
@@ -63,5 +66,5 @@ html body .main_container .navigation_container .navigation_item_selected {
   background-color: #495057;
 }
 html body .main_container .navigation_container .navigation_item_selected .navigation_item_icon {
-  stroke: #ffde7b;
+  stroke: #e9d391;
 }/*# sourceMappingURL=main.css.map */

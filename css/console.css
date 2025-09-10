@@ -1,0 +1,50 @@
+.__console__ {
+  height: 70%;
+  width: 100%;
+  background-color: #0d1b2a;
+  border-radius: 15px;
+}
+.__console__ .console_top_bar {
+  height: 25px;
+  width: 100%;
+  background-color: #6c757d;
+  display: flex;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.__console__ .console_top_bar .navigation_buttons_container {
+  margin: 5px 5px 5px 10px;
+  display: flex;
+  gap: 5px;
+}
+.__console__ .console_top_bar .navigation_buttons_container .navigation_button {
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+}
+.__console__ .console_top_bar .navigation_buttons_container .navigation_button_1 {
+  background-color: #db5565;
+}
+.__console__ .console_top_bar .navigation_buttons_container .navigation_button_2 {
+  background-color: #e9d391;
+}
+.__console__ .console_top_bar .navigation_buttons_container .navigation_button_3 {
+  background-color: #95d5b2;
+}
+.__console__ .console_top_bar .server_windows_container {
+  height: 100%;
+  width: 100%;
+  margin-right: 15px;
+  display: flex;
+  gap: 5px;
+}
+.__console__ .console_top_bar .server_windows_container .server_window {
+  height: 100%;
+  width: 150px;
+  background-color: #adb5bd;
+  border-radius: 10px;
+}
+.__console__ .console_top_bar .server_windows_container .server_window_selected {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}/*# sourceMappingURL=console.css.map */

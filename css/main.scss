@@ -33,6 +33,9 @@ html {
 
         &_left {
           width: 80%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
         }
 
         &_right {
