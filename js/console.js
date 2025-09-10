@@ -1,3 +1,5 @@
+import Commands from 'helper/commands.js';
+
 export default class Console {
   constructor(console_element_id) {
     this.clicks = 0;
