@@ -21,6 +21,9 @@ html {
     .main_container {
       height: 80%;
       width: 70%;
+      padding: 15px;
+      border-radius: 15px;
+      background-color: $blue_dark_2;
     }
   }
 }
