@@ -35,6 +35,14 @@ export default class Console {
     this.promt_content.textContent += added_content;
   }
 
+  showConsole() {
+    this.console_element.style.display = 'block';
+  }
+
+  hideConsole() {
+    this.console_element.style.display = 'none';
+  }
+
   userConsoleClick() {
     this.clicks += 1;
     console.log(`Console clicked ${this.clicks} times`);
