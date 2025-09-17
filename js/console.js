@@ -1,5 +1,6 @@
 export default class Console {
-  constructor(console_element_id) {
+  constructor(console_id) {
+    this.console_id = console_id;
     this.console_element = null;
     this.top_bar = null;
     this.message_container = null;
@@ -10,18 +11,7 @@ export default class Console {
     this.max_messages = 100;
 
     this.createConsoleElement();
-
-    this.createLogMessage('Console initialized');
-    this.createLogMessage(`Console element ID: ${console_element_id}`);
-    this.createLogMessage('Ready for commands');
-    this.createInfoMessage('This is an info message');
-    this.createWarningMessage('This is a warning message');
-    this.createErrorMessage('This is an error message');
-    this.createMessage('This is a regular message');
-
-    this.automatedConsoleClick();
-    this.automatedConsoleClick();
-    this.automatedConsoleClick();
+    this.setStartMessages();
   }
 
   getClicks() {
@@ -34,6 +24,11 @@ export default class Console {
 
   setPromtPlaceholder(user, server) {
     this.promt_placeholder.textContent = `${user}@${server}:~$ `;
+  }
+
+  setStartMessages() {
+    this.createLogMessage('Console initialized');
+    this.createLogMessage(`Console element ID: ${this.console_id}`);
   }
 
   updatePromtContent(added_content) {
