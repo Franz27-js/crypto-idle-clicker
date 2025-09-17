@@ -7,6 +7,7 @@ export default class Miner {
     this.kurs = 0.00001016; //* coins per click (0.00001016 BTC = 1€)
     this.click_value_min = 1; // how many coins per click
     this.click_value_max = 12; // how many coins per click
+    this.level_up_bonus = 10;
   }
 
   getName() {
@@ -37,5 +38,11 @@ export default class Miner {
     this.coins_generated += parseFloat((converted_btc * this.multiplier).toFixed(8));
 
     return parseFloat((converted_btc * this.multiplier).toFixed(8));
+  }
+
+  addBonusLevelUp() {
+    this.coins_generated = parseFloat((this.click_value_max * this.level_up_bonus * this.kurs).toFixed(8));
+
+    return parseFloat((this.click_value_max * this.level_up_bonus * this.kurs).toFixed(8));
   }
 }

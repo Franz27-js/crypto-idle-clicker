@@ -1,7 +1,7 @@
 import Miner from './miner.js';
 
 export default class Console {
-  constructor(console_id, wallet) {
+  constructor(console_id, wallet, level) {
     this.console_id = console_id;
     this.console_element = null;
     this.top_bar = null;
@@ -10,7 +10,7 @@ export default class Console {
     this.promt_content = null;
 
     this.clicks = 0;
-    this.max_messages = 100;
+    this.max_messages = 300;
 
     this.createConsoleElement();
     this.setStartMessages();
@@ -19,6 +19,7 @@ export default class Console {
     this.createInfoMessage(`Miner '${this.miner.name}' initialized`);
     this.wallet = wallet;
     this.createInfoMessage(`Wallet initialized`);
+    this.level = level;
   }
 
   getClicks() {
@@ -56,8 +57,14 @@ export default class Console {
     let generated_coin = this.miner.generateCoin();
     this.wallet.updateBitcoinBalance(generated_coin);
     this.createMessage(`Reward: ${generated_coin} BTC mined`);
-    // scroll to bottom
-    this.message_container.scrollTop = this.message_container.scrollHeight;
+
+    let level_check = this.level.addExperience();
+    if (level_check == '__new_level_reached__') {
+      let level_up_bonus = this.miner.addBonusLevelUp();
+      this.wallet.updateBitcoinBalance(level_up_bonus);
+      this.createLogMessage('New Level reached!');
+      this.createInfoMessage(`New Level bonus: ${level_up_bonus} BTC`);
+    }
 
     // clear console if more than 100 messages
     let messages_generated = this.message_container.childElementCount;
@@ -152,6 +159,8 @@ export default class Console {
     message_element.textContent = message;
 
     this.message_container.appendChild(message_element);
+    // scroll to bottom
+    this.message_container.scrollTop = this.message_container.scrollHeight;
   }
 
   createLogMessage(message) {
@@ -161,6 +170,8 @@ export default class Console {
     message_element.textContent = `[log] ${message}`;
 
     this.message_container.appendChild(message_element);
+    // scroll to bottom
+    this.message_container.scrollTop = this.message_container.scrollHeight;
   }
 
   createInfoMessage(message) {
@@ -170,6 +181,8 @@ export default class Console {
     message_element.textContent = `[info] ${message}`;
 
     this.message_container.appendChild(message_element);
+    // scroll to bottom
+    this.message_container.scrollTop = this.message_container.scrollHeight;
   }
 
   createWarningMessage(message) {
@@ -179,6 +192,8 @@ export default class Console {
     message_element.textContent = `[warning] ${message}`;
 
     this.message_container.appendChild(message_element);
+    // scroll to bottom
+    this.message_container.scrollTop = this.message_container.scrollHeight;
   }
 
   createErrorMessage(message) {
@@ -188,6 +203,8 @@ export default class Console {
     message_element.textContent = `[critical] ${message}`;
 
     this.message_container.appendChild(message_element);
+    // scroll to bottom
+    this.message_container.scrollTop = this.message_container.scrollHeight;
   }
 
   clearConsole() {

@@ -8,7 +8,8 @@
   background-color: $main_mid_1;
   border-radius: 15px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
 
   .balance {
     color: $grey_light_4;

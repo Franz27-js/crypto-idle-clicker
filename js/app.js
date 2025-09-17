@@ -1,6 +1,8 @@
 // import and init all modules
-import Console from "./console.js";
 import Wallet from "./wallet.js";
+import Level from "./level.js";
+import Console from "./console.js";
 
 const wallet_instance = new Wallet();
-const console_instance = new Console('console_1', wallet_instance);
+const level_instance = new Level(wallet_instance);
+const console_instance = new Console('console_1', wallet_instance, level_instance);

@@ -35,8 +35,8 @@ export default class Wallet {
     this.wallet_element.id = 'wallet';
     this.wallet_element.classList.add('__wallet__');
 
-    this.createBitcoinBalanceElement();
     this.createEuroBalanceElement();
+    this.createBitcoinBalanceElement();
 
     document.querySelector('.content_container_column_left').appendChild(this.wallet_element);
   }
