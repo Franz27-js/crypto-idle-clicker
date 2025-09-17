@@ -1,0 +1,31 @@
+@import 'colors';
+
+.__wallet__ {
+  height: 30%;
+  width: 50%;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: $main_mid_1;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+
+  .balance {
+    color: $grey_light_4;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+
+    #bitcoin_amount {
+      font-weight: bold;
+      margin-left: 10px;
+      color: $yellow_accent_1;
+    }
+
+    #euro_amount {
+      font-weight: bold;
+      margin-left: 10px;
+      color: $green_accent_1;
+    }
+  }
+}

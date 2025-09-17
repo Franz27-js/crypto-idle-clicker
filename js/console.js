@@ -8,15 +8,17 @@ export default class Console {
     this.message_container = null;
     this.promt_placeholder = null;
     this.promt_content = null;
-    
-    this.miner = new Miner('Bitcoin Miner');
-    this.wallet = wallet;
 
     this.clicks = 0;
     this.max_messages = 100;
 
     this.createConsoleElement();
     this.setStartMessages();
+
+    this.miner = new Miner('Bitcoin Miner');
+    this.createInfoMessage(`Miner '${this.miner.name}' initialized`);
+    this.wallet = wallet;
+    this.createInfoMessage(`Wallet initialized`);
   }
 
   getClicks() {

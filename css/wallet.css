@@ -1,0 +1,26 @@
+.__wallet__ {
+  height: 30%;
+  width: 50%;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #415a77;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.__wallet__ .balance {
+  color: #f8f9fa;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+.__wallet__ .balance #bitcoin_amount {
+  font-weight: bold;
+  margin-left: 10px;
+  color: #e9d391;
+}
+.__wallet__ .balance #euro_amount {
+  font-weight: bold;
+  margin-left: 10px;
+  color: #95d5b2;
+}/*# sourceMappingURL=wallet.css.map */
