@@ -48,8 +48,6 @@ export default class Console {
     this.createMessageContaiener();
     this.createPromtLine();
 
-    this.console_element.addEventListener('click', () => this.userConsoleClick());
-
     document.querySelector('.content_container_column_left').appendChild(this.console_element);
   }
 
@@ -85,6 +83,8 @@ export default class Console {
     this.message_container = document.createElement('div');
     this.message_container.classList.add('promt_message_container');
 
+    this.message_container.addEventListener('click', () => this.userConsoleClick());
+
     this.console_element.appendChild(this.message_container);
   }
 
@@ -99,6 +99,8 @@ export default class Console {
 
     this.promt = document.createElement('div');
     this.promt.classList.add('promt_line');
+
+    this.promt.addEventListener('click', () => this.userConsoleClick());
 
     this.promt.appendChild(this.promt_placeholder);
     this.promt.appendChild(this.promt_content);
