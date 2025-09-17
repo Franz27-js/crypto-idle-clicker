@@ -5,7 +5,7 @@ export default class Console {
     this.message_container = null;
     this.promt_placeholder = null;
     this.promt_content = null;
-    
+
     this.clicks = 0;
 
     this.createConsoleElement();
@@ -45,7 +45,15 @@ export default class Console {
 
   userConsoleClick() {
     this.clicks += 1;
-    console.log(`Console clicked ${this.clicks} times`);
+    this.createMessage(`Console clicked ${this.clicks} times`);
+    // scroll to bottom
+    this.message_container.scrollTop = this.message_container.scrollHeight;
+
+    // clear console if more than 50 messages
+    let messages_generated = this.message_container.childElementCount;
+    if (messages_generated > 50) {
+      this.clearConsole();
+    }
   }
 
   createConsoleElement() {
@@ -157,5 +165,11 @@ export default class Console {
     message_element.textContent = `[critical] ${message}`;
 
     this.message_container.appendChild(message_element);
+  }
+
+  clearConsole() {
+    while (this.message_container.firstChild) {
+      this.message_container.firstChild.remove()
+    }
   }
 }
