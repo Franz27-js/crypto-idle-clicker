@@ -18,6 +18,10 @@ export default class Console {
     this.createWarningMessage('This is a warning message');
     this.createErrorMessage('This is an error message');
     this.createMessage('This is a regular message');
+
+    this.automatedConsoleClick();
+    this.automatedConsoleClick();
+    this.automatedConsoleClick();
   }
 
   getClicks() {
@@ -47,6 +51,19 @@ export default class Console {
   userConsoleClick() {
     this.clicks += 1;
     this.createMessage(`Console clicked ${this.clicks} times`);
+    // scroll to bottom
+    this.message_container.scrollTop = this.message_container.scrollHeight;
+
+    // clear console if more than 100 messages
+    let messages_generated = this.message_container.childElementCount;
+    if (messages_generated > this.max_messages) {
+      this.clearConsole();
+    }
+  }
+
+  automatedConsoleClick(name = 'Bot 1') {
+    this.clicks += 1;
+    this.createLogMessage(`Console clicked by '${name}', console clicked ${this.clicks} times`);
     // scroll to bottom
     this.message_container.scrollTop = this.message_container.scrollHeight;
 
