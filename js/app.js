@@ -1,4 +1,4 @@
 // import and init all modules
 import Console  from "./console.js";
 
-const console_instance = new Console();
+const console_instance = new Console('console_1');

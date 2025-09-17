@@ -47,4 +47,50 @@
 .__console__ .console_top_bar .server_windows_container .server_window_selected {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+.__console__ .promt_message_container {
+  height: calc(100% - 25px - 50px);
+  width: 100%;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.__console__ .promt_line {
+  height: 50px;
+  width: 100%;
+  padding: 5px 15px;
+  background-color: #7678ed;
+  color: #f8f9fa;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  align-items: center;
+  font-family: "Source Code Pro", monospace;
+  font-size: 20px;
+}
+.__console__ .promt_line .promt_placeholder {
+  margin-right: 15px;
+  color: #dee2e6;
+}
+
+.message {
+  margin-bottom: 5px;
+  font-family: "Source Code Pro", monospace;
+  color: #f8f9fa;
+  font-size: 15px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.message.log-message {
+  color: #014f86;
+}
+.message.info-message {
+  color: #7678ed;
+}
+.message.warning-message {
+  color: #e9d391;
+}
+.message.error-message {
+  color: #db5565;
 }/*# sourceMappingURL=console.css.map */
