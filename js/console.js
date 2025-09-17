@@ -35,6 +35,11 @@ export default class Console {
     this.promt_content.textContent += added_content;
   }
 
+  userConsoleClick() {
+    this.clicks += 1;
+    console.log(`Console clicked ${this.clicks} times`);
+  }
+
   createConsoleElement() {
     this.console_element = document.createElement('div');
     this.console_element.classList.add('__console__');
@@ -42,6 +47,8 @@ export default class Console {
     this.createTopBar();
     this.createMessageContaiener();
     this.createPromtLine();
+
+    this.console_element.addEventListener('click', () => this.userConsoleClick());
 
     document.querySelector('.content_container_column_left').appendChild(this.console_element);
   }
