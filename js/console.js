@@ -1,11 +1,16 @@
+import Miner from './miner.js';
+
 export default class Console {
-  constructor(console_id) {
+  constructor(console_id, wallet) {
     this.console_id = console_id;
     this.console_element = null;
     this.top_bar = null;
     this.message_container = null;
     this.promt_placeholder = null;
     this.promt_content = null;
+    
+    this.miner = new Miner('Bitcoin Miner');
+    this.wallet = wallet;
 
     this.clicks = 0;
     this.max_messages = 100;
@@ -45,7 +50,10 @@ export default class Console {
 
   userConsoleClick() {
     this.clicks += 1;
-    this.createMessage(`Console clicked ${this.clicks} times`);
+
+    let generated_coin = this.miner.generateCoin();
+    this.wallet.updateBitcoinBalance(generated_coin);
+    this.createMessage(`Reward: ${generated_coin} BTC mined`);
     // scroll to bottom
     this.message_container.scrollTop = this.message_container.scrollHeight;
 
