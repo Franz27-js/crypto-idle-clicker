@@ -35,6 +35,12 @@ html body .main_container .content_container_column_left {
   flex-direction: column;
   justify-content: flex-end;
 }
+html body .main_container .content_container_column_left .content_container_column_left_inner {
+  height: 30%;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 15px;
+}
 html body .main_container .content_container_column_right {
   width: 20%;
 }

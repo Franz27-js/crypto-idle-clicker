@@ -37,6 +37,13 @@ html {
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
+
+          .content_container_column_left_inner {
+            height: 30%;
+            margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+          }
         }
 
         &_right {

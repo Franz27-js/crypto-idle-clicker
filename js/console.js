@@ -100,8 +100,6 @@ export default class Console {
     this.createTopBar();
     this.createMessageContaiener();
     this.createPromtLine();
-
-    document.querySelector('.content_container_column_left').appendChild(this.console_element);
   }
 
   createTopBar() {
