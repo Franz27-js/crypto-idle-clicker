@@ -4,7 +4,7 @@ export default class Miner {
     this.coin = coin;
     this.coins_generated = 0;
     this.multiplier = 1;
-    this.kurs = 0.00001016; //* coins per click (0.00001016 BTC = 1€)
+    this.kurs = 0.00001016;
     this.click_value_min = 1; // how many coins per click
     this.click_value_max = 12; // how many coins per click
     this.level_up_bonus = 10;
