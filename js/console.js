@@ -7,6 +7,7 @@ export default class Console {
     this.promt_content = null;
 
     this.clicks = 0;
+    this.max_messages = 100;
 
     this.createConsoleElement();
 
@@ -51,7 +52,7 @@ export default class Console {
 
     // clear console if more than 100 messages
     let messages_generated = this.message_container.childElementCount;
-    if (messages_generated > 100) {
+    if (messages_generated > this.max_messages) {
       this.clearConsole();
     }
   }
