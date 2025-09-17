@@ -49,9 +49,9 @@ export default class Console {
     // scroll to bottom
     this.message_container.scrollTop = this.message_container.scrollHeight;
 
-    // clear console if more than 50 messages
+    // clear console if more than 100 messages
     let messages_generated = this.message_container.childElementCount;
-    if (messages_generated > 50) {
+    if (messages_generated > 100) {
       this.clearConsole();
     }
   }
