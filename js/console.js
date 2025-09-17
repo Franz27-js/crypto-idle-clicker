@@ -2,6 +2,7 @@ import Miner from './miner.js';
 
 export default class Console {
   constructor(console_id, wallet, level) {
+    // console elements
     this.console_id = console_id;
     this.console_element = null;
     this.top_bar = null;
@@ -9,12 +10,16 @@ export default class Console {
     this.promt_placeholder = null;
     this.promt_content = null;
 
+    // console helper variables
     this.clicks = 0;
     this.max_messages = 300;
+    this.console_active = true;
 
+    // init console
     this.createConsoleElement();
     this.setStartMessages();
 
+    // helper classes
     this.miner = new Miner('Bitcoin Miner');
     this.createInfoMessage(`Miner '${this.miner.name}' initialized`);
     this.wallet = wallet;
@@ -45,10 +50,12 @@ export default class Console {
 
   showConsole() {
     this.console_element.style.display = 'block';
+    this.console_active = true;
   }
 
   hideConsole() {
     this.console_element.style.display = 'none';
+    this.console_active = false;
   }
 
   userConsoleClick() {
