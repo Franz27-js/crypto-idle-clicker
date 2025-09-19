@@ -40,7 +40,8 @@
   background-color: rgba(219, 85, 101, 0.23);
 }
 .__trading__ .bitcoin-container .button-sell:hover {
-  background-color: rgba(219, 85, 101, 0.1);
+  background-color: #db5565;
+  color: #fff;
 }
 .__trading__ .bitcoin-container .button-buy {
   color: #95d5b2;
@@ -48,5 +49,6 @@
   background-color: rgba(149, 213, 178, 0.23);
 }
 .__trading__ .bitcoin-container .button-buy:hover {
-  background-color: rgba(149, 213, 178, 0.1);
+  background-color: #95d5b2;
+  color: #fff;
 }/*# sourceMappingURL=trading.css.map */
