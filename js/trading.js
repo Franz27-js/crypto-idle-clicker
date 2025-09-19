@@ -57,5 +57,13 @@ export default class Trading {
     this.trading_bitcoin_buy_button.classList.add('button-trading');
     this.trading_bitcoin_buy_button.classList.add('button-buy');
     this.trading_bitcoin_buy_button.textContent = 'Buy BTC';
+
+    this.trading_bitcoin_sell_button.addEventListener('click', () => {
+      this.convertBitcoinToEuro();
+    });
+
+    this.trading_bitcoin_buy_button.addEventListener('click', () => {
+      this.convertEuroToBitcoin();
+    });
   }
 }
