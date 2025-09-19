@@ -103,7 +103,7 @@ export default class Console {
       this.wallet.updateBitcoinBalance(level_up_bonus);
       this.createLogMessage('New Level reached!');
       this.createInfoMessage(`New Level bonus: ${level_up_bonus} BTC`);
-    }
+    }    
 
     // clear console if more than 100 messages
     let messages_generated = this.message_container.childElementCount;
