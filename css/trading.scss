@@ -7,4 +7,53 @@
   padding: 15px;
   background-color: $main_mid_1;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+
+  .bitcoin-container {
+    display: flex;
+    gap: 15px;
+
+    .button-trading {
+      height: 35px;
+      width: 30%;
+      background-color: #ffffff3b;
+      color: #fff;
+      border-radius: 15px;
+      border: 2px solid #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: all .3s ease;
+      user-select: none;
+
+      &:hover {
+        background-color: #ffffff15;
+      }
+    }
+
+    .button-sell {
+      color: $red_accent_1;
+      border: 2px solid $red_accent_1;
+      background-color: rgba($red_accent_1, .23);
+      
+      &:hover {
+        background-color: rgba($red_accent_1, .1);
+      }
+    }
+
+    .button-buy {
+      color: $green_accent_1;
+      border: 2px solid $green_accent_1;
+      background-color: rgba($green_accent_1, .23);
+      
+      &:hover {
+        background-color: rgba($green_accent_1, .1);
+      }
+    }
+  }
 }

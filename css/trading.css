@@ -5,4 +5,48 @@
   padding: 15px;
   background-color: #415a77;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.__trading__ .bitcoin-container {
+  display: flex;
+  gap: 15px;
+}
+.__trading__ .bitcoin-container .button-trading {
+  height: 35px;
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.231372549);
+  color: #fff;
+  border-radius: 15px;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.__trading__ .bitcoin-container .button-trading:hover {
+  background-color: rgba(255, 255, 255, 0.0823529412);
+}
+.__trading__ .bitcoin-container .button-sell {
+  color: #db5565;
+  border: 2px solid #db5565;
+  background-color: rgba(219, 85, 101, 0.23);
+}
+.__trading__ .bitcoin-container .button-sell:hover {
+  background-color: rgba(219, 85, 101, 0.1);
+}
+.__trading__ .bitcoin-container .button-buy {
+  color: #95d5b2;
+  border: 2px solid #95d5b2;
+  background-color: rgba(149, 213, 178, 0.23);
+}
+.__trading__ .bitcoin-container .button-buy:hover {
+  background-color: rgba(149, 213, 178, 0.1);
 }/*# sourceMappingURL=trading.css.map */

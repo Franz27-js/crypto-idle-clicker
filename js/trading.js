@@ -1,6 +1,8 @@
 export default class Trading {
   constructor(wallet) {
     this.trading_element = null;
+    this.trading_bitcoin_sell_button = null;
+    this.trading_bitcoin_buy_button = null;
 
     // bitcoin
     this.bitcoin_kurs = 0.00001016;
@@ -34,5 +36,26 @@ export default class Trading {
   createTradingElement() {
     this.trading_element = document.createElement('div');
     this.trading_element.classList.add('__trading__');
+
+    let trade_bit_con = document.createElement('div');
+    trade_bit_con.classList.add('bitcoin-container');
+
+    this.createTradeBitcoinButtons();
+
+    trade_bit_con.appendChild(this.trading_bitcoin_buy_button);
+    trade_bit_con.appendChild(this.trading_bitcoin_sell_button);
+    this.trading_element.appendChild(trade_bit_con);
+  }
+
+  createTradeBitcoinButtons() {
+    this.trading_bitcoin_sell_button = document.createElement('div');
+    this.trading_bitcoin_sell_button.classList.add('button-trading');
+    this.trading_bitcoin_sell_button.classList.add('button-sell');
+    this.trading_bitcoin_sell_button.textContent = 'Sell BTC';
+
+    this.trading_bitcoin_buy_button = document.createElement('div');
+    this.trading_bitcoin_buy_button.classList.add('button-trading');
+    this.trading_bitcoin_buy_button.classList.add('button-buy');
+    this.trading_bitcoin_buy_button.textContent = 'Buy BTC';
   }
 }
