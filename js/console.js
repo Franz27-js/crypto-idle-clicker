@@ -29,7 +29,7 @@ export default class Console {
   }
 
   createCustomListener() {
-    const custom_event = new CustomEvent('sute:consoleClick', {bubbles: true, cancelable: true});
+    const custom_event = new CustomEvent('sute:consoleClick', { bubbles: true, cancelable: true });
     this.console_element.addEventListener('click', (e) => {
       e.target.dispatchEvent(custom_event);
     });
@@ -71,7 +71,7 @@ export default class Console {
 
     let generated_coin = this.miner.generateCoin();
     this.wallet.updateBitcoinBalance(generated_coin);
-    this.createMessage(`Reward: ${generated_coin} BTC mined`);
+    this.createMessage(`hash: ${this.generateMiningHash()} | ${generated_coin} BTC`);
 
     let level_check = this.level.addExperience();
     if (level_check == '__new_level_reached__') {
@@ -90,15 +90,44 @@ export default class Console {
 
   automatedConsoleClick(name = 'Bot 1') {
     this.clicks += 1;
-    this.createLogMessage(`Console clicked by '${name}', console clicked ${this.clicks} times`);
+
+    let generated_coin = this.miner.generateCoin();
+    this.wallet.updateBitcoinBalance(generated_coin);
+    this.createLogMessage(`['${name}']: ${this.generateMiningHash()} | ${generated_coin} BTC`);
     // scroll to bottom
     this.message_container.scrollTop = this.message_container.scrollHeight;
+
+    let level_check = this.level.addExperience();
+    if (level_check == '__new_level_reached__') {
+      let level_up_bonus = this.miner.addBonusLevelUp();
+      this.wallet.updateBitcoinBalance(level_up_bonus);
+      this.createLogMessage('New Level reached!');
+      this.createInfoMessage(`New Level bonus: ${level_up_bonus} BTC`);
+    }
 
     // clear console if more than 100 messages
     let messages_generated = this.message_container.childElementCount;
     if (messages_generated > this.max_messages) {
       this.clearConsole();
     }
+  }
+
+  generateMiningHash() {
+    let hash = '';
+    const chars = [
+      // Lowercase letters
+      'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+      'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+      // Integers as strings
+      '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+    ];
+
+    for (let i = 0; i < 6; i++) {
+      let random_char = Math.floor(Math.random() * chars.length);
+      hash += chars[random_char];
+    }
+
+    return hash;
   }
 
   createConsoleElement() {
