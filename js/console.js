@@ -17,6 +17,7 @@ export default class Console {
 
     // init console
     this.createConsoleElement();
+    this.createCustomListener();
     this.setStartMessages();
 
     // helper classes
@@ -25,6 +26,13 @@ export default class Console {
     this.wallet = wallet;
     this.createInfoMessage(`Wallet initialized`);
     this.level = level;
+  }
+
+  createCustomListener() {
+    const custom_event = new CustomEvent('sute:consoleClick', {bubbles: true, cancelable: true});
+    this.console_element.addEventListener('click', (e) => {
+      e.target.dispatchEvent(custom_event);
+    });
   }
 
   getClicks() {

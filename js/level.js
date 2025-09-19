@@ -46,7 +46,7 @@ export default class Level {
     if (this.experience >= this.experience_to_next_level) {
       this.experience -= this.experience_to_next_level;
       this.level += 1;
-      this.experience_to_next_level = Math.floor(this.experience_to_next_level * 1.5);
+      this.experience_to_next_level = Math.floor(this.experience_to_next_level * 1.75);
       return '__new_level_reached__';
     } else {
       return '';

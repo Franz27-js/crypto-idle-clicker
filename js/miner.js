@@ -32,6 +32,10 @@ export default class Miner {
   }
 
   generateCoin() {
+    document.addEventListener('sute:consoleClick', () => {
+      console.log('custom listener click');
+    });
+
     let click_euro = Math.floor(Math.random() * this.click_value_max) + this.click_value_min;
     let converted_btc = parseFloat((click_euro * this.kurs).toFixed(8));
 
